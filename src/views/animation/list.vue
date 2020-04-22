@@ -25,7 +25,7 @@ export default {
         }
     },
     created(){
-        this.num = 6,
+        this.num = 16,
         this.probeType = 3
         this.listenScroll=true
     },
