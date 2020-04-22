@@ -1,6 +1,6 @@
 <template>
     <div class="progress-bar" ref="progressBar">
-        <div class="progress-inner-box">
+        <!-- <div class="progress-inner-box">
               <div class="progress" ref="progress" :style="{width:newWidth}"></div>
               <div 
               class="progress-btn-wrapper" 
@@ -11,7 +11,7 @@
               >
                   <div class="progress-btn"></div>
               </div>
-        </div>
+        </div> -->
     </div>
 </template>
 

@@ -6,12 +6,21 @@
         <div @click="changeData">改变数据</div>
         <div @click="toPageB">B页面</div>
         <div>当前播放：{{currentIndex}}</div>
+        <button @click="controlHide">hide</button>
+        <transition name="fade">
+            <img v-if="show" src="http://img5.imgtn.bdimg.com/it/u=3790014455,2670545218&fm=26&gp=0.jpg">
+        </transition>
     </div>
 </template>
 
 <script>
 import {mapGetters,mapActions} from 'vuex'
 export default {
+    data(){
+        return{
+            show:false
+        }
+    },
     methods:{
         ...mapActions(['changeList','setCurrentIndex']),
         pageAClick(){
@@ -32,6 +41,9 @@ export default {
         },
         setPlayingIndex(index){
             this.setCurrentIndex(index)
+        },
+        controlHide(){
+            this.show = !this.show
         }
     },
     computed:{
@@ -49,5 +61,22 @@ export default {
 <style scoped>
     .pageA{
         background: yellow;
+    }
+    .fade-enter-active{
+        animation: bounce-in .5s;
+    }
+    .fade-leave-active{
+        animation: bounce-in .5s reverse;
+    }
+    @keyframes bounce-in{
+        0% {
+            transform:rotate(0deg);
+        }
+        50% {
+            transform:skew(20deg,30deg);
+        }
+        100% {
+            transform:skew(130deg,40deg);
+        }
     }
 </style>

@@ -1,14 +1,13 @@
 <template>
     <div class="bar-wrapper">
-        <progress-bar></progress-bar>
+        <loading></loading>
+        <progress-bar @percentChange="percentChange"></progress-bar>
     </div>
 </template>
 
 <script>
 
-import progressBar from '../components/bar'
 export default {
-  components:{progressBar},
   data(){
       return {
           
@@ -18,7 +17,9 @@ export default {
     
   },
   methods: {
-     
+     percentChange(percent){
+        console.log('当前进度',percent)
+     }
   }  
 }
 </script>
