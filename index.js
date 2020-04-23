@@ -1,0 +1,2 @@
+console.log(123)
+console.log(process.env.ee,444)
